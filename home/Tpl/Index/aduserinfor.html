@@ -1,0 +1,92 @@
+<layout name='Layout/layout' />
+
+<div class="admin-content">
+
+	<div class="am-cf am-padding">
+		<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">个人资料</strong> / <small>User Information</small></div>
+	</div>
+
+	<div class="am-tabs am-margin" data-am-tabs>
+		<ul class="am-tabs-nav am-nav am-nav-tabs">
+			<!-- <li ><a href="#tab1">基本信息</a></li> -->
+			<li class="am-active"><a href="#tab2">详细描述 / Advice</a></li>
+			<!-- <li><a href="#tab3">SEO 选项</a></li> -->
+		</ul>
+
+		<div class="am-tabs-bd">
+			<div class="am-tab-panel am-fade am-in am-active" id="tab2">
+				<form class="am-form" method="post" action="__URL__/chkuser" name="myForm">
+					<div class="am-g am-margin-top">
+						<div class="am-u-sm-4 am-u-md-2 am-text-right">
+							姓名 / Name
+						</div>
+						<div class="am-u-sm-8 am-u-md-4 am-u-end">
+							<input type="text" class="am-input-sm" name="name" value="{$user.name}">
+						</div>
+					</div>
+
+					<div class="am-g am-margin-top">
+						<div class="am-u-sm-4 am-u-md-2 am-text-right">
+							公司邮箱 / Company Email
+						</div>
+						<div class="am-u-sm-8 am-u-md-4">
+							<input type="text" class="am-input-sm" name="email" value="{$user.email}" disabled>
+						</div>
+						<div class="am-hide-sm-only am-u-md-6 am-text-warning">*不可修改 / Unchangeable
+</div>
+					</div>
+
+					<div class="am-g am-margin-top">
+						<div class="am-u-sm-4 am-u-md-2 am-text-right">
+							原始密码 / Original Password
+						</div>
+						<div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
+							<input type="password" class="am-input-sm" name="password">
+						</div>
+					</div>
+					
+					<div class="am-g am-margin-top">
+						<div class="am-u-sm-4 am-u-md-2 am-text-right">
+							新密码 / New Password
+						</div>
+						<div class="am-u-sm-8 am-u-md-4 am-u-end col-end">
+							<input type="password" class="am-input-sm" name="newpassword">
+						</div>
+					</div>
+					
+					<script>
+						function checkForm()
+						{
+							var ou=document.myForm.password;
+							var oc=document.myForm.newpassword;
+							if(ou.value=='')
+							{
+								alert("原始密码为必填");
+							}else
+							{
+								if(oc.value=='')
+								{
+									alert("新密码为必填");
+								}else
+								{
+									document.myForm.submit();
+								}
+							}
+							
+						}
+					</script>
+					
+					<div class="am-margin am-g">
+						<div class="am-u-sm-12 am-u-md-4">
+							<button type="button" class="am-btn am-btn-primary am-btn-xs" onclick="checkForm()">提交保存 / Submit</button>&nbsp;
+							<button type="reset" class="am-btn am-btn-primary am-btn-xs">放弃保存 / Reset</button>
+						</div>
+						
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+</div>

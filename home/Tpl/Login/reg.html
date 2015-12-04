@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Welcome To ECV Advice Web</title>
+	<meta name="description" content="这是一个form页面">
+	<meta name="keywords" content="form">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<load href='__IMG__/favicon.png' />
+	<load href='__IMG__/app-icon72x72@2x.png' />
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<load href='__CSS__/amazeui.min.css' />
+	<load href='__CSS__/admin.css' />
+	<script>
+		function chk_form() {
+			var email = document.getElementById("user-email");
+			if (email.value == "") {
+				alert("Email不能为空！");
+				return false;
+				//email.focus();
+			}
+			var preg = /^\w+([-+.]\w+)*@\ecvinternational.com/; //匹配Email
+			if (!preg.test(email.value)) {
+				alert("Email格式错误！");
+				return false;
+				//email.focus();
+			}
+
+			var pass = document.getElementById("user-password");
+			var pass2 = document.getElementById("user-password2");
+			if (pass.value == "") {
+				alert("密码不能为空！");
+				return false;
+				//pass.focus();
+			}
+			if (pass2.value == "") {
+				alert("重复密码不能为空！");
+				return false;
+				//pass.focus();
+			}
+			if(pass.value!=pass2.value)
+				{
+					alert('密码和重复密码需一致');
+					return false;
+				}
+		}
+	</script>
+</head>
+
+<body>
+	<!--[if lte IE 9]>
+<p class="browsehappy">你正在使用<strong>过时</strong>的浏览器，Amaze UI 暂不支持。 请 <a href="http://browsehappy.com/" target="_blank">升级浏览器</a>
+  以获得更好的体验！</p>
+<![endif]-->
+
+	<header class="am-topbar admin-header">
+		<div class="am-topbar-brand"> <strong><a href="__APP__/Index/index">ECV International</strong>
+			<small>意见提交箱</small></a>
+		</div>
+
+		<button class="am-topbar-btn am-topbar-toggle am-btn am-btn-sm am-btn-success am-show-sm-only" data-am-collapse="{target: '#topbar-collapse'}"><span class="am-sr-only">导航切换</span> <span class="am-icon-bars"></span></button>
+		<div class="am-collapse am-topbar-collapse" id="topbar-collapse">
+
+			<ul class="am-nav am-nav-pills am-topbar-nav am-topbar-right admin-header-list">
+				<li class="am-hide-sm-only"><a href="javascript:;" id="admin-fullscreen"><span class="am-icon-arrows-alt"></span> <span class="admin-fullText">开启全屏</span></a></li>
+			</ul>
+		</div>
+	</header>
+
+	<div class="am-cf admin-main">
+		<!-- content start -->
+		<div class="admin-content">
+			<div class="am-cf am-padding">
+				<div class="am-fl am-cf"><strong class="am-text-primary am-text-lg">注册</strong> / <small>Register</small></div>
+			</div>
+
+			<hr/>
+
+			<div class="am-g">
+				<div class="am-u-sm-12 am-u-md-8">
+					<form class="am-form am-form-horizontal" method="post" action="__URL__/chkreg" onsubmit="return chk_form();">
+						<div class="am-form-group">
+							<label for="user-name" class="am-u-sm-3 am-form-label">姓名 / Name</label>
+							<div class="am-u-sm-9">
+								<input type="text" id="user-name" placeholder="姓名 / Name" name="name">
+								<small>输入你的名字，让我们记住你。</small>
+							</div>
+						</div>
+
+						<div class="am-form-group">
+							<label for="user-email" class="am-u-sm-3 am-form-label">公司邮箱 / Company Email</label>
+							<div class="am-u-sm-9">
+								<input type="email" id="user-email" placeholder="公司邮箱 / Company Email  XXX@ecvinternational.com" name="email">
+								<small>公司邮箱你懂得...<font class="am-text-danger"> * 必填 / Required</font></small>
+							</div>
+						</div>
+
+						<div class="am-form-group">
+							<label for="user-phone" class="am-u-sm-3 am-form-label">密码 / Password</label>
+							<div class="am-u-sm-9">
+								<input type="password" id="user-password" placeholder="输入你的密码 / Password" name="password">
+							</div>
+						</div>
+						<div class="am-form-group">
+							<label for="user-phone" class="am-u-sm-3 am-form-label">重复密码 / Confirm Password</label>
+							<div class="am-u-sm-9">
+								<input type="password" id="user-password2" placeholder="输入你的密码 / Confirm Password">
+								<small>须同上面一致...</small>
+							</div>
+						</div>
+
+						<div class="am-form-group">
+							<label for="user-phone" class="am-u-sm-3 am-form-label">验证码 / Verification Code</label>
+							<div class="am-u-sm-3">
+								<input type="text" class="am-input-sm" name="code" />
+							</div>
+
+							<div class="am-u-sm-4 am-u-sm-pull-2">
+								<img src="__APP__/Public/code" onclick='this.src=this.src+"?"+Math.random()' />
+							</div>
+						</div>
+
+						<div class="am-form-group">
+							<div class="am-u-sm-9 am-u-sm-push-3">
+								<button type="submit" class="am-btn am-btn-primary">提交信息 / Submit</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- content end -->
+
+	</div>
+
+	<a href="#" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"></a>
+
+	<footer>
+		<hr>
+		<p class="am-padding-left">© 2015 AllWEB by Mondayw.</p>
+	</footer>
+
+	<!--[if lt IE 9]>
+<script src="http://libs.baidu.com/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://cdn.staticfile.org/modernizr/2.8.3/modernizr.js"></script>
+<script src="assets/js/amazeui.ie8polyfill.min.js"></script>
+<![endif]-->
+
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<!--[if (gte IE 9)|!(IE)]><!-->
+	<load href='__JS__/jquery.min.js' />
+	<!--<![endif]-->
+	<load href='__JS__/amazeui.min.js' />
+	<load href='__JS__/app.js' />
+</body>
+
+</html>

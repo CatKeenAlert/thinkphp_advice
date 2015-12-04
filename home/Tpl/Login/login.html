@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Welcome To ECV Advice Web</title>
+	<meta name="description" content="这是一个form页面">
+	<meta name="keywords" content="form">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="Cache-Control" content="no-siteapp" />
+	<load href='__IMG__/favicon.png' />
+	<load href='__IMG__/app-icon72x72@2x.png' />
+	<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+	<load href='__CSS__/amazeui.min.css' />
+	<load href='__CSS__/admin.css' />
+	<style>
+		.header {
+			text-align: center;
+		}
+		
+		.header h1 {
+			font-size: 200%;
+			color: #333;
+			margin-top: 30px;
+		}
+		
+		.header p {
+			font-size: 14px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function chk_form() {
+			var pass = document.getElementById("password");
+			if (pass.value == "") {
+				alert("密码不能为空！");
+				return false;
+				//pass.focus();
+			}
+			var email = document.getElementById("email");
+			if (email.value == "") {
+				alert("Email不能为空！");
+				return false;
+				//email.focus();
+			}
+			var preg = /^\w+([-+.]\w+)*@\ecvinternational.com/; //匹配Email
+			if (!preg.test(email.value)) {
+				alert("Email格式错误！");
+				return false;
+				//email.focus();
+			}
+		}
+
+		function getCookie(c_name) {
+			if (document.cookie.length > 0) {
+				c_start = document.cookie.indexOf(c_name + "=")
+				if (c_start != -1) {
+					c_start = c_start + c_name.length + 1
+					c_end = document.cookie.indexOf(";", c_start)
+					if (c_end == -1) c_end = document.cookie.length
+					return unescape(document.cookie.substring(c_start, c_end))
+				}
+			}
+			return ""
+		}
+
+		function setCookie() {
+			var email = document.getElementById('email').value;
+			document.cookie = 'email=' + email;
+		}
+		
+		function rembname() {
+			email = getCookie('email')
+			if (email != null && email != "") {
+				document.getElementById('email').value = email
+			}
+		}
+	</script>
+</head>
+
+<body onload="rembname()">
+	<div class="header">
+		<div class="am-g">
+			<h1>ECV Advice</h1>
+			<p>Welcome to the advice website
+				<br/>We create value and strive for excellence</p>
+		</div>
+		<hr />
+	</div>
+	<div class="am-g">
+		<div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+			<h3>登录 / LOGIN</h3>
+			<hr>
+
+			<form name="form" method="post" class="am-form" action="__URL__/chklogin" onsubmit="return chk_form();">
+				<label for="email">公司邮箱 / Company Email</label>
+				<input type="text" name="email" id="email" value="" placeholder="xxxx@ecvinternational.com">
+				<br>
+				<label for="password">密码 / Password</label>
+				<input type="password" name="password" id="password" value="">
+				<br>
+				<div class="am-radio">
+					<label>
+						<input id="rembername" type="radio" name="doc-radio-1" value="option1" onclick="setCookie();"> 记住我 / Rember Me
+					</label>
+				</div>
+				<br />
+				<div class="am-cf">
+					<input type="submit" name="" value="登 录 / Login" class="am-btn am-btn-primary am-btn-sm am-fl">
+					<a href="__URL__/reg" class="am-btn am-btn-primary am-btn-sm am-fr">注 册 / Register</a>
+				</div>
+			</form>
+			<hr>
+			<p>© 2015 AllWEB by Mondayw.</p>
+		</div>
+	</div>
+</body>
+
+</html>

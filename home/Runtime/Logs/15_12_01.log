@@ -1,0 +1,9 @@
+[ 2015-12-01T14:25:01+08:00 ] ERR: (ThinkException) 非法操作:list
+[ 2015-12-01T15:18:58+08:00 ] ERR: (ThinkException) 非法操作:assets
+[ 2015-12-01T15:18:58+08:00 ] ERR: (ThinkException) 非法操作:assets
+[ 2015-12-01T15:19:07+08:00 ] ERR: (ThinkException) 非法操作:assets
+[ 2015-12-01T16:11:07+08:00 ] ERR: (ThinkException) Model:get您所请求的方法不存在！
+[ 2015-12-01T16:44:27+08:00 ] ERR: (ThinkException) Model:first您所请求的方法不存在！
+[ 2015-12-01T17:00:11+08:00 ] ERR: (ThinkException) XML标签语法错误 : condition='{session('?key');}'
+[ 2015-12-01T17:00:11+08:00 ] ERR: (ThinkException) 非法操作:__APP__
+[ 2015-12-01T17:00:11+08:00 ] ERR: (ThinkException) 非法操作:__APP__
