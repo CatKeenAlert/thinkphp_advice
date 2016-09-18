@@ -1,4 +1,4 @@
-# thinkphp_advice
+<!--# thinkphp_advice
 thinkphp开发的留言板，公司项目，做的有点赶，花了两天时间。
 
 php开发，数据库为mysql，用了国内thinkphp框架
@@ -9,5 +9,6 @@ php开发，数据库为mysql，用了国内thinkphp框架
 	'DB_USER'=>'root',    //设置用户名
 	'DB_PWD'=>'',        //设置密码
 	'DB_PORT'=>'3306',   //设置端口号
-	
+-->
+#This project is puzzling， I found it less valuable to waste time and attention.
 
